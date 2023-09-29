@@ -3,4 +3,7 @@ INSERT INTO paypolicy VALUES
                              (2, 'projectRole', '', 50),
                              (3, 'experience', '1 year', 10),
                              (4, 'additional', 'BirthDay', 50),
-                             (5, 'additional', 'New Year', 20);
+                             (5, 'additional', 'New Year', 20),
+                             (6, 'title', 'secretary', 55),
+                             (7, 'title', 'supervisor', 100);
+;
