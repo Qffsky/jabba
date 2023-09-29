@@ -9,7 +9,6 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -20,11 +19,19 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
-public class Project implements CommonEntity {
+public class Project implements CommonEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name = "projectid")
-    private Long id;
+    private Integer id;
+
+    @Column(name = "projectname")
+    private String projectName;
+
+    @Column(name = "projectstart")
+    private String projectStart;
+
+    @Column(name = "projectend")
+    private String projectEnd;
 }

@@ -10,7 +10,6 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -21,13 +20,12 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
-public class EmployeeInfo implements CommonEntity {
+public class EmployeeInfo implements CommonEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name = "employeeid")
-    private Long id;
+    private Integer id;
 
     @Column(name = "fullname")
     private String fullname;
@@ -40,4 +38,10 @@ public class EmployeeInfo implements CommonEntity {
 
     @Column(name = "workexperience")
     private String workExperience;
+
+    @Column(name = "jobtitle")
+    private String jobTitle;
+
+    @Column(name = "salary")
+    private Integer salary;
 }

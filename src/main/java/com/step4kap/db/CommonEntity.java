@@ -1,7 +1,9 @@
 package com.step4kap.db;
 
 /**
- * Interface for all objects that coonect with database
+ * Interface for all objects that conect with database
  */
-public interface CommonEntity {
+public interface CommonEntity<ID> {
+    ID getId();
+    void setId(ID id);
 }
