@@ -4,6 +4,7 @@
 
 1. [Тема](#тема)
 2. [Прогресс](#прогресс)
+3. [Отчёт](#отчёт)
 3. [Требования](#требования)
 
 ### Тема
@@ -12,9 +13,20 @@
 
 ### Прогресс
 
-+ [ ] Этап 1.
-+ [ ] Этап 2.
-+ [ ] Этап 3.
++ [готово] Этап 1.
++ [готово] Этап 2.
++ [] Этап 3.
+
+### Отчёт
+Первый этап: 
+- ER-диаграмма(src\main\resources\img\ER.jpeg, erDescription.md)
+- SQL-скрипты инициализации и заполнения бд (src\main\resources\SQLScripts)
+- Сценарии использование (CONCEPT.md)
+
+Второй этап:
+- ДАО классы(src\main\java\com\step4kap\dao)
+- Конфигурационный файл(src\main\java\com\step4kap\db\config\HibernateDatabaseConfig.java)
+- Тесты(src\test\java\com\step4kap\dao)
  
 ### Требования
 
