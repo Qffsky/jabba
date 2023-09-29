@@ -26,9 +26,9 @@
 
         <p> Проект:&nbsp <span
                 th:if="${projectService.personsFromPlace(place) == null}">отсутсвует</span>
-            <a th:each="person, iter: ${placeService.personsFromPlace(place)}"
-               th:href="'/person?personId=' + ${person.getId()}">
-                <span th:text="${person.getName()} + ${!iter.last ? ',' : ''}"></span>
+            <a th:each="project, iter: ${projectService.personsFromProject(project)}"
+               th:href="'/projects?personId=' + ${project.getId()}">
+                <span th:text="${person.getProjectname()} + ${!iter.last ? ',' : ''}"></span>
             </a>
         </p>
     </div>
@@ -37,12 +37,12 @@
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
             <form style="margin-right: 30px" method="get" action="/editPlace">
-                <input type="hidden" name="placeId" th:value="${place.getId()}"/>
+                <input type="hidden" name="projectId" th:value="${project.getId()}"/>
                 <button id="editButton" type="submit" class="btn btn-secondary">Редактировать информацию о проекте
                 </button>
             </form>
-            <form style="margin-right: 30px" method="post" action="/removePlace">
-                <input type="hidden" name="placeId" th:value="${place.getId()}"/>
+            <form style="margin-right: 30px" method="post" action="/removeProject">
+                <input type="hidden" name="projectId" th:value="${project.getId()}"/>
                 <button id="deleteButton" type="submit" class="btn btn-secondary">Удалить проект из базы
                 </button>
             </form>

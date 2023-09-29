@@ -18,7 +18,7 @@
 <div th:replace="general :: page-header"> </div>
 
 <div class="indent">
-    <div id="personInfo">
+    <div id="EmployeeInfo">
         <h4 th:text="${employeeInfo.getFullname()}"></h4>
         <p th:if="${employeeInfo.getFullname() != null}" th:text="'ФИО служащего: ' + ${employeeInfo.getFullname()}"></p>
         <p th:if="${employeeInfo.getHomeaddress() != null}" th:text="'Адрес: ' + ${employeeInfo.getHomeaddress()}"></p>
@@ -26,9 +26,9 @@
         <p th:if="${employeeInfo.Jobtitle() != null}" th:text="'Должность: ' + ${employeeInfo.Jobtitle()}"></p>
         <p th:if="${employeeInfo.getSalary() != null}" th:text="'Зарплата: ' + ${employeeInfo.getSalary()}"></p>
 
-        <p> Проекты:&nbsp <span th:if="${person2placeService.getAllPersonsPlaces(person.getId()) == null}">нет</span>
-            <a th:each="place, iter: ${person2placeService.getAllPersonsPlaces(person.getId())}" th:href="'/place?placeId=' + ${place.getId()}">
-                <span th:text="${place.getName()} + ${!iter.last ? ',' : ''}"></span>
+        <p> Проекты:&nbsp <span th:if="${projectService.personsFromProject(employeeInfo) == null}">нет</span>
+            <a th:each="project, iter: ${projectService.getAllProjectsFromEmployeeInfo(employeeInfo.getId())}" th:href="'/project?projectId=' + ${project.getId()}">
+                <span th:text="${project.getProjectname()} + ${!iter.last ? ',' : ''}"></span>
             </a>
         </p>
 
@@ -41,7 +41,7 @@
                 <input type="hidden" name="personId" th:value="${person.getId()}"/>
                 <button id="editButton" type="submit" class="btn btn-secondary">Редактировать информацию о человеке</button>
             </form>
-            <form method="post" action="/removePerson">
+            <form method="post" action="/removeEmployeeInfo">
                 <input type="hidden" name="personId" th:value="${person.getId()}"/>
                 <button id="deleteButton" type="submit" class="btn btn-secondary">Удалить человека из базы</button>
             </form>
