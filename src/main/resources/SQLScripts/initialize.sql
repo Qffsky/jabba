@@ -12,7 +12,7 @@ CREATE TABLE EmployeeInfo (
 	FullName varchar(100),
 	HomeAddress varchar(100),
 	Education varchar(100),
-	WorkExperience interval DAY,
+	WorkExperience interval YEAR,
 	JobTitle projectRole,
 	Salary integer
 );
@@ -27,7 +27,8 @@ CREATE TABLE Projects (
 CREATE TABLE PayPolicy (
 	PolicyID integer PRIMARY KEY,
 	PolicyType policyType,
-	PolicyDescription jsonb
+	PolicyDescription varchar(100),
+	PolicyAmount integer
 );
 
 

@@ -1,0 +1,16 @@
+INSERT INTO employeeinfo VALUES
+                             (30039, 'Noel Livingston', '52282 Sporer Roads', 'Wake Forest University', 'YEAR(6)', 'supervisor', 100),
+                             (2386, 'Will Whitehead', '273 Weimann Ridges', 'Grinnell College', 'YEAR(6)', 'secretary', 55),
+                             (9681, 'Shelby Olson', '296 Bertha Loaf', 'Grinnell College', 'YEAR(6)', 'secretary', 55),
+                             (12581, 'Adrien Cochran', '63342 Addison Lights', 'Grinnell College', 'YEAR(5)', 'expert', 75),
+                             (9424, 'Ivy Sims', '7310 Ellie Garden', 'Villanova University', 'YEAR(5)', 'expert', 75),
+                             (6696, 'Dahlia Ingram', '6003 Madeline Fords', 'Dartmouth College', 'YEAR(5)', 'expert', 75),
+                             (7380, 'Lindsey Mullins', '734 Deontae Wells', 'Dartmouth College', 'YEAR(4)', 'analyst', 50),
+                             (5347, 'Kyler Ingram', '9441 Hansen Island', 'Dartmouth College', 'YEAR(4)', 'analyst', 50),
+                             (7645, 'Deborah Khan', '9828 Stokes Underpass', 'Dartmouth College', 'YEAR(4)', 'analyst', 40),
+                             (22540, 'Eden Aguilar', '095 O''Connell Divide', 'Columbia University', 'YEAR(4)', 'analyst', 40),
+                             (4833, 'Jayleen Austin', '0744 Vandervort Gardens', 'Columbia University', 'YEAR(3)', 'analyst', 40),
+                             (23220, 'Dustin Alvarez', '87093 Antonette Locks', 'Trinity College', 'YEAR(2)', 'analyst', 45),
+                             (12657, 'Vanessa Brandt', '23550 Berneice Ports', 'Trinity College', 'YEAR(1)', 'analyst', 52),
+                             (7846, 'Lizeth Ho', '698 Doyle Pike', 'Trinity College', 'YEAR(1)', 'analyst', 38),
+                             (16885, 'Jaime Bernard', '07965 Adeline Port', 'Trinity College', 'YEAR(1)', 'analyst', 25);
