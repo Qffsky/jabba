@@ -1,15 +1,20 @@
 package com.step4kap.dao;
 
 import com.step4kap.db.CommonEntity;
-import jakarta.persistence.criteria.CriteriaQuery;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.stereotype.Repository;
 
+
+import javax.persistence.criteria.CriteriaQuery;
+import java.io.Serializable;
 import java.util.Collection;
 
-public class CommonDAO<T extends CommonEntity<ID>, ID> implements DAO<T, ID> {
+@Repository
+public abstract class CommonDAO<T extends CommonEntity<ID>, ID extends Serializable> implements DAO<T, ID> {
 
     protected SessionFactory sessionFactory;
 
@@ -41,22 +46,22 @@ public class CommonDAO<T extends CommonEntity<ID>, ID> implements DAO<T, ID> {
     }
 
     @Override
-    public void save(T t) {
+    public void save(T entity) {
         try (Session session = sessionFactory.openSession()) {
-            if (t.getId() != null) {
-                t.setId(null);
+            if (entity.getId() != null) {
+                entity.setId(null);
             }
             session.beginTransaction();
-            session.saveOrUpdate(t);
+            session.saveOrUpdate(entity);
             session.getTransaction().commit();
         }
     }
 
     @Override
-    public void saveCollection(Collection<T> ts) {
+    public void saveCollection(Collection<T> entities) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            for (T entity : ts) {
+            for (T entity : entities) {
                 this.save(entity);
             }
             session.getTransaction().commit();
@@ -64,10 +69,19 @@ public class CommonDAO<T extends CommonEntity<ID>, ID> implements DAO<T, ID> {
     }
 
     @Override
-    public void delete(T t) {
+    public void update(T entity) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            session.delete(t);
+            session.update(entity);
+            session.getTransaction().commit();
+        }
+    }
+
+    @Override
+    public void delete(T entity) {
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+            session.delete(entity);
             session.getTransaction().commit();
         }
     }
@@ -78,15 +92,6 @@ public class CommonDAO<T extends CommonEntity<ID>, ID> implements DAO<T, ID> {
             session.beginTransaction();
             T entity = getById(id);
             session.delete(entity);
-            session.getTransaction().commit();
-        }
-    }
-
-    @Override
-    public void update(T t) {
-        try (Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-            session.update(t);
             session.getTransaction().commit();
         }
     }

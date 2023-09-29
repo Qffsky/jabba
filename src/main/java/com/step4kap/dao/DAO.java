@@ -1,6 +1,5 @@
 package com.step4kap.dao;
 
-
 import com.step4kap.db.CommonEntity;
 
 import java.util.Collection;
@@ -13,13 +12,13 @@ public interface DAO<T extends CommonEntity<ID>, ID> {
 
     Collection<T> getAll();
 
-    void save(T t);
+    void save(T entity);
 
-    void saveCollection(Collection<T> ts);
+    void saveCollection(Collection<T> entities);
 
-    void delete(T t);
+    void delete(T entity);
 
     void deleteById(ID id);
 
-    void update(T t);
+    void update(T entity);
 }

@@ -15,19 +15,26 @@
 
 + [готово] Этап 1.
 + [готово] Этап 2.
-+ [] Этап 3.
++ [готово] Этап 3.
 
 ### Отчёт
 Первый этап: 
 - ER-диаграмма(src\main\resources\img\ER.jpeg, erDescription.md)
 - SQL-скрипты инициализации и заполнения бд (src\main\resources\SQLScripts)
 - Сценарии использование (CONCEPT.md)
+- файл сборки (build.gradle)
 
 Второй этап:
 - ДАО классы(src\main\java\com\step4kap\dao)
+- Классы модели бд (src\main\java\com\step4kap\db)
 - Конфигурационный файл(src\main\java\com\step4kap\db\config\HibernateDatabaseConfig.java)
 - Тесты(src\test\java\com\step4kap\dao)
  
+Третий этап:
+- Структура сайта(src\main\resources\img\web_structure.png)
+- Конфигурационный файл (src\main\java\com\step4kap\main\WebConfig.java)
+- Контроллеры (src\main\java\com\step4kap\controller)
+
 ### Требования
 
 1. Система управления информацией о зарплатах служащих компании.

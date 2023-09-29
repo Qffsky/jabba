@@ -34,7 +34,7 @@ CREATE TABLE PayPolicy (
 
 CREATE TABLE EIDToSalaryHistory (
 	EmployeeID integer REFERENCES EmployeeInfo(EmployeeID),
-	SalaryHistory jsonb[]
+	SalaryHistory varchar(100)[]
 );
 
 CREATE TABLE EIDToSalaryPolicy (

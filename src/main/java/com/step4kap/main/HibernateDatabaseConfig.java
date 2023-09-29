@@ -1,4 +1,4 @@
-package com.step4kap.db.config;
+package com.step4kap.main;
 
 
 import org.springframework.beans.factory.annotation.Value;
@@ -26,7 +26,7 @@ public class HibernateDatabaseConfig {
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setDataSource(getDataSource());
+        sessionFactory.setDataSource(oraDataSource());
         sessionFactory.setPackagesToScan("step4kap.db");
 
         Properties hibernateProperties = new Properties();
@@ -40,7 +40,7 @@ public class HibernateDatabaseConfig {
     }
 
     @Bean
-    public DataSource getDataSource() {
+    public DataSource oraDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName(DB_DRIVER);
