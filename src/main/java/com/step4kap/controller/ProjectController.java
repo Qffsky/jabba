@@ -45,7 +45,7 @@ public class ProjectController {
     @GetMapping("/editProject")
     public String editProjectPage(@RequestParam(name = "C", required = false) Integer projectId, Model model) {
         if (projectId == null) {
-            model.addAttribute("project", new Projet());
+            model.addAttribute("project", new Project());
             return "editProject";
         }
 
