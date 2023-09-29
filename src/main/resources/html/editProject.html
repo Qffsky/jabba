@@ -20,6 +20,9 @@
     <div id="Project">
         <h4 th:text="${project.getName()}"></h4>
         <p th:text="'Название: ' + ${project.getProjectname()}"></p>
+        <p th:text="'Начало: ' + ${project.getProjectstart()}"></p>
+        <p th:text="'Конец: ' + ${project.getProjectend()}"></p>
+
 
         <p> Проект:&nbsp <span
                 th:if="${projectService.personsFromPlace(place) == null}">отсутсвует</span>

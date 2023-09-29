@@ -19,16 +19,14 @@
 
 <div class="indent">
     <div id="personInfo">
-        <h4 th:text="${person.getName()}"></h4>
-        <p th:if="${person.getName() != null}" th:text="'Имя: ' + ${person.getName()}"></p>
-        <p th:if="${person.getGender() != null}" th:text="'Пол: ' + ${person.getGender()}"></p>
-        <p th:if="${person.getBirth() != null}" th:text="'Дата рождения: ' + ${person.getBirth()}"></p>
-        <p th:if="${person.getDeath() != null}" th:text="'Дата смерти: ' + ${person.getDeath()}"></p>
-        <p th:if="${relationService.bornInMarriage(person) == false}" th:text="'Законнорожденный: нет'"></p>
-        <p th:if="${relationService.bornInMarriage(person) == true}" th:text="'Законнорожденный: да'"></p>
-        <p th:if="${person.getCharacter() != null}" th:text="'Краткая характеристика: ' + ${person.getCharacter()}"></p>
+        <h4 th:text="${employeeInfo.getFullname()}"></h4>
+        <p th:if="${employeeInfo.getFullname() != null}" th:text="'ФИО служащего: ' + ${employeeInfo.getFullname()}"></p>
+        <p th:if="${employeeInfo.getHomeaddress() != null}" th:text="'Адрес: ' + ${employeeInfo.getHomeaddress()}"></p>
+        <p th:if="${employeeInfo.getEducation() != null}" th:text="'Образование: ' + ${employeeInfo.getEducation()}"></p>
+        <p th:if="${employeeInfo.Jobtitle() != null}" th:text="'Должность: ' + ${employeeInfo.Jobtitle()}"></p>
+        <p th:if="${employeeInfo.getSalary() != null}" th:text="'Зарплата: ' + ${employeeInfo.getSalary()}"></p>
 
-        <p> Места проживания:&nbsp <span th:if="${person2placeService.getAllPersonsPlaces(person.getId()) == null}">нет</span>
+        <p> Проекты:&nbsp <span th:if="${person2placeService.getAllPersonsPlaces(person.getId()) == null}">нет</span>
             <a th:each="place, iter: ${person2placeService.getAllPersonsPlaces(person.getId())}" th:href="'/place?placeId=' + ${place.getId()}">
                 <span th:text="${place.getName()} + ${!iter.last ? ',' : ''}"></span>
             </a>
